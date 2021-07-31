@@ -1,0 +1,12 @@
+
+SpecFlowDemo/obj/project.assets.json
+
+SpecFlowDemo/obj/project.nuget.cache
+
+SpecFlowDemo/obj/SpecFlowDemo.csproj.nuget.dgspec.json
+
+*.cache
+
+SpecFlowDemoTest/obj/SpecFlowDemoTest.csproj.nuget.dgspec.json
+
+SpecFlowDemoTest/obj/SpecFlowDemoTest.csproj.nuget.g.props
