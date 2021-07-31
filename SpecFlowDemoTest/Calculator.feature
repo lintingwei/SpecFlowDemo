@@ -1,7 +1,7 @@
 ﻿Feature: Calculator
 	Simple calculator for adding two numbers
 
-@mytag
+@myCalculator
 Scenario: Add two numbers
 	Given the first number is 50
 	And the second number is 70

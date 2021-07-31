@@ -1955,6 +1955,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "SpecFlowDemo/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/SpecFlowDemo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SpecFlowDemo.dll": {}
+        }
       }
     }
   },
@@ -6705,6 +6715,11 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "SpecFlowDemo/1.0.0": {
+      "type": "project",
+      "path": "../SpecFlowDemo/SpecFlowDemo.csproj",
+      "msbuildProject": "../SpecFlowDemo/SpecFlowDemo.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6713,7 +6728,8 @@
       "NUnit >= 3.13.2",
       "NUnit3TestAdapter >= 3.16.1",
       "SpecFlow >= 3.9.22",
-      "SpecFlow.NUnit >= 3.9.22"
+      "SpecFlow.NUnit >= 3.9.22",
+      "SpecFlowDemo >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6746,7 +6762,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\SpecFlowDemo\\SpecFlowDemo\\SpecFlowDemo.csproj": {
+              "projectPath": "D:\\SpecFlowDemo\\SpecFlowDemo\\SpecFlowDemo.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

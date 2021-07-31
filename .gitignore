@@ -10,3 +10,17 @@ SpecFlowDemo/obj/SpecFlowDemo.csproj.nuget.dgspec.json
 SpecFlowDemoTest/obj/SpecFlowDemoTest.csproj.nuget.dgspec.json
 
 SpecFlowDemoTest/obj/SpecFlowDemoTest.csproj.nuget.g.props
+
+*.dll
+
+SpecFlowDemo/.vs/SpecFlowDemo/v16/.suo
+
+*.exe
+
+*.pdb
+
+*.json
+
+SpecFlowDemo/obj/Debug/netcoreapp3.1/SpecFlowDemo.csproj.FileListAbsolute.txt
+
+SpecFlowDemoTest/obj/Debug/netcoreapp3.1/SpecFlowDemoTest.csproj.CopyComplete
