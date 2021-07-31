@@ -24,3 +24,11 @@ SpecFlowDemo/.vs/SpecFlowDemo/v16/.suo
 SpecFlowDemo/obj/Debug/netcoreapp3.1/SpecFlowDemo.csproj.FileListAbsolute.txt
 
 SpecFlowDemoTest/obj/Debug/netcoreapp3.1/SpecFlowDemoTest.csproj.CopyComplete
+
+SpecFlowDemo/.vs/SpecFlowDemo/v16/TestStore/0/000.testlog
+
+SpecFlowDemo/.vs/SpecFlowDemo/v16/TestStore/0/testlog.manifest
+
+SpecFlowDemoTest/bin/Debug/netcoreapp3.1/nunit_random_seed.tmp
+
+SpecFlowDemoTest/obj/Debug/netcoreapp3.1/SpecFlowDemoTest.csproj.FileListAbsolute.txt

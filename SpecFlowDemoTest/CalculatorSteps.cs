@@ -1,4 +1,5 @@
-﻿using SpecFlowDemo;
+﻿using NUnit.Framework;
+using SpecFlowDemo;
 using System;
 using TechTalk.SpecFlow;
 
@@ -39,7 +40,8 @@ namespace SpecFlowDemoTest
         [Then(@"the result should be (.*)")]
         public void ThenTheResultShouldBe(int expected)
         {
-            _scenarioContext.Pending();
+            var result = _scenarioContext.Get<int>("result");
+            Assert.AreEqual(expected, result);
         }
     }
 }
