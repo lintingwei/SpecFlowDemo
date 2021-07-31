@@ -7,10 +7,12 @@ namespace SpecFlowDemoTest
     [Binding]
     public class CalculatorSteps
     {
+        private Calculator _calculator;
         private ScenarioContext _scenarioContext;
         public CalculatorSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
+            _calculator = new Calculator();
         }
         [Given(@"the first number is (.*)")]
         public void GivenTheFirstNumberIs(int firstNumber)
@@ -27,7 +29,11 @@ namespace SpecFlowDemoTest
         [When(@"the two numbers are added")]
         public void WhenTheTwoNumbersAreAdded()
         {
-            _scenarioContext.Pending();
+            var firstNumber = _scenarioContext.Get<int>("firstNumber");
+            var secondNumber = _scenarioContext.Get<int>("secondNumber");
+            var result = _calculator.Add(firstNumber, secondNumber);
+
+            _scenarioContext.Set<int>(result, "result");
         }
         
         [Then(@"the result should be (.*)")]
