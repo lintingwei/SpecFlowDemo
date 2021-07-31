@@ -15,13 +15,13 @@ namespace SpecFlowDemoTest
         [Given(@"the first number is (.*)")]
         public void GivenTheFirstNumberIs(int firstNumber)
         {
-            _scenarioContext.Pending();
+            _scenarioContext.Set<int>(firstNumber, "firstNumber");
         }
         
         [Given(@"the second number is (.*)")]
         public void GivenTheSecondNumberIs(int secondNumber)
         {
-            _scenarioContext.Pending();
+            _scenarioContext.Set<int>(secondNumber, "secondNumber");
         }
         
         [When(@"the two numbers are added")]
