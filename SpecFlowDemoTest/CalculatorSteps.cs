@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using SpecFlowDemo;
-using System;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowDemoTest
@@ -26,7 +25,14 @@ namespace SpecFlowDemoTest
         {
             _scenarioContext.Set<int>(secondNumber, "secondNumber");
         }
-        
+
+        [Given(@"the two numbers are (.*) and (.*)")]
+        public void GivenTheTwoNumbersAre(int firstNumber, int secondNumber)
+        {
+            _scenarioContext.Set<int>(firstNumber, "firstNumber");
+            _scenarioContext.Set<int>(secondNumber, "secondNumber");
+        }
+
         [When(@"the two numbers are added")]
         public void WhenTheTwoNumbersAreAdded()
         {

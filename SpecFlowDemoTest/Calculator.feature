@@ -10,7 +10,6 @@ Scenario: Add two numbers
 
 @Calculator
 Scenario: Add tow negtive numbers
-	Given the first number is -10
-	And the second number is -70
+	Given the two numbers are -10 and -70
 	When the two numbers are added
 	Then the result should be -80
