@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NUnit.Framework;
+using SpecFlowDemo;
+using System;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowDemoTest
@@ -14,25 +16,29 @@ namespace SpecFlowDemoTest
         [Given(@"playerA score (.*)")]
         public void GivenPlayerAScore(int playerAScore)
         {
-            ScenarioContext.Current.Pending();
+            _scenarioContext.Set<int>(playerAScore, "playerAScore");
         }
         
         [Given(@"playerB score (.*)")]
         public void GivenPlayerBScore(int playerBScore)
         {
-            ScenarioContext.Current.Pending();
+            _scenarioContext.Set<int>(playerBScore, "playerBScore");
         }
         
         [When(@"get tennis score display string")]
         public void WhenGetTennisScoreDisplayString()
         {
-            ScenarioContext.Current.Pending();
+            var playerAScore = _scenarioContext.Get<int>("playerAScore");
+            var playerBScore = _scenarioContext.Get<int>("playerBScore");
+            var scoreDisplay = TennisDisplayHelper.GetDisplayScore(playerAScore, playerBScore);
+            _scenarioContext.Set<string>(scoreDisplay, "scoreDisplay");
         }
         
         [Then(@"the score display should be (.*)")]
-        public void ThenTheScoreDisplayShouldBeLoveAll(string displayScore)
+        public void ThenTheScoreDisplayShouldBeLoveAll(string exceptedDisplayScore)
         {
-            ScenarioContext.Current.Pending();
+            var scoreDisplay = _scenarioContext.Get<string>("scoreDisplay");
+            Assert.AreEqual(exceptedDisplayScore, scoreDisplay);
         }
     }
 }
