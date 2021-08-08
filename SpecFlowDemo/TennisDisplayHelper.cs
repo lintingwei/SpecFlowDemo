@@ -9,13 +9,13 @@ namespace SpecFlowDemo
         private static readonly Dictionary<int, string> ScoreMapping = new Dictionary<int, string>() { { 0, "Love" }, { 1, "Fifteen" }, { 2, "Thirty" }, { 3, "Forty" } };
         public static string GetDisplayScore(int playerAScore, int playerBScore)
         {
-            if (IsPlayerAWon(playerAScore, playerBScore))
+            if (IsGameSet(playerAScore, playerBScore))
             {
-                return "Player A Won";
+                return $"{GetAdvPlayer(playerAScore, playerBScore)} Won";
             }
-            if (IsPlayerAAdv(playerAScore, playerBScore))
+            if (IsAdv(playerAScore, playerBScore))
             {
-                return "Player A Adv";
+                return $"{GetAdvPlayer(playerAScore, playerBScore)} Adv";
             }
             if (IsDeuce(playerAScore, playerBScore))
             {
@@ -28,7 +28,12 @@ namespace SpecFlowDemo
             return $"{ScoreMapping[playerAScore]} {ScoreMapping[playerBScore]}";
         }
 
-        private static bool IsPlayerAWon(int playerAScore, int playerBScore)
+        private static object GetAdvPlayer(int playerAScore, int playerBScore)
+        {
+            return playerAScore > playerBScore ? "Player A" : "Player B";
+        }
+
+        private static bool IsGameSet(int playerAScore, int playerBScore)
         {
             return IsOnePlayerScoreMoreThanThree(playerAScore, playerBScore) && Math.Abs(playerAScore - playerBScore) > 1;
         }
@@ -38,9 +43,9 @@ namespace SpecFlowDemo
             return (playerAScore > 3 || playerBScore > 3);
         }
 
-        private static bool IsPlayerAAdv(int playerAScore, int playerBScore)
+        private static bool IsAdv(int playerAScore, int playerBScore)
         {
-            return playerAScore > playerBScore && BothScoreMoreThan2(playerAScore, playerBScore);
+            return BothScoreMoreThan2(playerAScore, playerBScore) && !SameScore(playerAScore, playerBScore);
         }
 
         private static bool BothScoreMoreThan2(int playerAScore, int playerBScore)
