@@ -8,7 +8,7 @@ namespace SpecFlowDemo
     {
         public static string GetDisplayScore(int playerAScore, int playerBScore)
         {
-            throw new NotImplementedException();
+            return "Love All";
         }
     }
 }
