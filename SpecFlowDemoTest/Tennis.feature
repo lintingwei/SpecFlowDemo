@@ -42,3 +42,10 @@ Scenario: PlayerA 0 And PlayerB 2
 	And playerB score 2
 	When get tennis score display string
 	Then the score display should be Love Thirty
+
+@Tennis
+Scenario: PlayerA 0 And PlayerB 3
+	Given playerA score 0
+	And playerB score 3
+	When get tennis score display string
+	Then the score display should be Love Forty
