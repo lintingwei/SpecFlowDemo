@@ -84,3 +84,10 @@ Scenario: PlayerA 4 And PlayerB 3
 	And playerB score 3
 	When get tennis score display string
 	Then the score display should be Player A Adv
+
+@Tennis
+Scenario: PlayerA 5 And PlayerB 3
+	Given playerA score 5
+	And playerB score 3
+	When get tennis score display string
+	Then the score display should be Player A Won
