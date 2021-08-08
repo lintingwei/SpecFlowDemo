@@ -6,16 +6,11 @@ namespace SpecFlowDemo
 {
     public class TennisDisplayHelper
     {
+        private static readonly Dictionary<int, string> ScoreMapping = new Dictionary<int, string>() { { 0, "Love" }, { 1, "Fifteen" }, { 2, "Thirty" }, { 3, "Forty" } };
         public static string GetDisplayScore(int playerAScore, int playerBScore)
         {
-            if (playerAScore == 3) {
-                return "Forty Love";
-            }
-            if (playerAScore == 2) {
-                return "Thirty Love";
-            }
-            if (playerAScore == 1) {
-                return "Fifteen Love";
+            if (playerAScore > 0) {
+                return $"{ScoreMapping[playerAScore]} {ScoreMapping[playerBScore]}";
             }
             return "Love All";
         }
