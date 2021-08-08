@@ -9,6 +9,9 @@ namespace SpecFlowDemo
         private static readonly Dictionary<int, string> ScoreMapping = new Dictionary<int, string>() { { 0, "Love" }, { 1, "Fifteen" }, { 2, "Thirty" }, { 3, "Forty" } };
         public static string GetDisplayScore(int playerAScore, int playerBScore)
         {
+            if ((playerAScore > 3 || playerBScore > 3) && Math.Abs(playerAScore - playerBScore) > 1) {
+                return "Player A Won";
+            }
             if (IsPlayerAAdv(playerAScore, playerBScore))
             {
                 return "Player A Adv";
