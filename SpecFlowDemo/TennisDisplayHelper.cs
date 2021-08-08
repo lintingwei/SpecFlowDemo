@@ -9,7 +9,8 @@ namespace SpecFlowDemo
         private static readonly Dictionary<int, string> ScoreMapping = new Dictionary<int, string>() { { 0, "Love" }, { 1, "Fifteen" }, { 2, "Thirty" }, { 3, "Forty" } };
         public static string GetDisplayScore(int playerAScore, int playerBScore)
         {
-            if (playerAScore > playerBScore && playerAScore > 2 && playerBScore > 2) {
+            if (IsPlayerAAdv(playerAScore, playerBScore))
+            {
                 return "Player A Adv";
             }
             if (IsDeuce(playerAScore, playerBScore))
@@ -21,6 +22,16 @@ namespace SpecFlowDemo
                 return $"{ScoreMapping[playerAScore]} All";
             }
             return $"{ScoreMapping[playerAScore]} {ScoreMapping[playerBScore]}";
+        }
+
+        private static bool IsPlayerAAdv(int playerAScore, int playerBScore)
+        {
+            return playerAScore > playerBScore && BothScoreMoreThan2(playerAScore, playerBScore);
+        }
+
+        private static bool BothScoreMoreThan2(int playerAScore, int playerBScore)
+        {
+            return playerAScore > 2 && playerBScore > 2;
         }
 
         private static bool IsDeuce(int playerAScore, int playerBScore)
