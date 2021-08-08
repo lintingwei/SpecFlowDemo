@@ -63,3 +63,10 @@ Scenario: PlayerA 2 And PlayerB 2
 	And playerB score 2
 	When get tennis score display string
 	Then the score display should be Thirty All
+
+@Tennis
+Scenario: PlayerA 3 And PlayerB 3
+	Given playerA score 3
+	And playerB score 3
+	When get tennis score display string
+	Then the score display should be Deuce
