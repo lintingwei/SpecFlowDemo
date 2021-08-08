@@ -8,6 +8,9 @@ namespace SpecFlowDemo
     {
         public static string GetDisplayScore(int playerAScore, int playerBScore)
         {
+            if (playerAScore == 3) {
+                return "Forty Love";
+            }
             if (playerAScore == 2) {
                 return "Thirty Love";
             }
